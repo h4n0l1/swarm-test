@@ -7,6 +7,11 @@ services:
       - "8090:80"
     links:
       - php
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 1s
+      timeout: 10s
+      retries: 3
     deploy:
       replicas: 3
       resources:
