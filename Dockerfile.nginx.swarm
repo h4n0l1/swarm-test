@@ -1,6 +1,7 @@
 # see https://github.com/cmaessen/docker-php-sendmail for more information
 
 FROM nginx:latest
+STOPSIGNAL SIGWINCH
 
 COPY ./code /code
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf

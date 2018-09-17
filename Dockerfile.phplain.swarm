@@ -1,6 +1,7 @@
 # see https://github.com/cmaessen/docker-php-sendmail for more information
 
-FROM php:7-fpm
+FROM php:7.1-fpm
+STOPSIGNAL SIGWINCH
 
 COPY ./code /code
 
